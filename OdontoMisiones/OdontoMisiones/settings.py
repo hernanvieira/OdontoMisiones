@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.repuesto',
     'apps.tecnico',
     'apps.usuario',
+    'apps.configuracion',
 ]
 
 MIDDLEWARE = [
