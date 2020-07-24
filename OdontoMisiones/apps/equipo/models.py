@@ -11,8 +11,8 @@ class Equipo(models.Model):
 
     def __str__(self):
         return str(self.id_equipo)
-    
-class estado_equipo(models.Model):
+
+class Estado_equipo(models.Model):
     id_estado_equipo = models.AutoField(primary_key=True)
     fecha_estado_equipo = models.DateField('fecha_estado_equipo',null=True, blank=True)
 
