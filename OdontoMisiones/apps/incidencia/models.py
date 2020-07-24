@@ -47,3 +47,12 @@ class Urgencia_incidencia(models.Model):
 
     def __str__(self):
         return str(self.id_urgencia_incidencia)
+
+class Pago(models.Model):
+    id_pago = models.AutoField(primary_key=True)
+    fecha_pago = models.DateField('fecha_estado_incidencia',null=True, blank=True)
+    monto = models.DecimalField(max_digits=10, decimal_places=2, null = True, blank=True, validators=[MinValueValidator(0.00)])
+    saldo = models.DecimalField(max_digits=10, decimal_places=2, null = True, blank=True, validators=[MinValueValidator(0.00)])
+
+    def __str__(self):
+        return str(self.id_estado_incidencia)
