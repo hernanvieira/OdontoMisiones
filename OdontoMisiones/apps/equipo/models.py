@@ -11,14 +11,7 @@ class Equipo(models.Model):
 
     def __str__(self):
         return str(self.id_equipo)
-
-class Tipo_estado_equipo(models.Model):
-    id_tipo_estado_equipo = models.AutoField(primary_key=True)
-    nombre_estado = models.CharField('nombre_estado',max_length=100, blank=True, null=True)
-
-    def __str__(self):
-        return str(self.nombre)
-
+    
 class estado_equipo(models.Model):
     id_estado_equipo = models.AutoField(primary_key=True)
     fecha_estado_equipo = models.DateField('fecha_estado_equipo',null=True, blank=True)
