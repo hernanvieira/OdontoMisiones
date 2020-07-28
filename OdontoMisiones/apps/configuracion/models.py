@@ -27,12 +27,16 @@ class Provincia(models.Model):
     id_provincia = models.AutoField(primary_key=True)
     nombre = models.CharField('nombre',max_length=100, blank=True, null=True)
 
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.nombre)
 
 class Ciudad(models.Model):
     id_ciudad = models.AutoField(primary_key=True)
     nombre = models.CharField('nombre',max_length=100, blank=True, null=True)
+
+    provincia = models.ForeignKey(Provincia, on_delete=models.PROTECT)
 
     def __str__(self):
         return str(self.nombre)

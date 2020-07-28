@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from apps.configuracion.models import Ciudad
 
 # Create your models here.
 class Cliente(models.Model):
@@ -21,6 +22,9 @@ class Consultorio(models.Model):
     barrio = models.CharField('barrio',max_length=100, blank=True, null=True)
     calle = models.CharField('calle',max_length=100, blank=True, null=True)
     nombre = models.CharField('nombre',max_length=100, blank=True, null=True)
+
+    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
 
     def __str__(self):
         return str(self.nombre)
