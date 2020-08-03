@@ -2,9 +2,9 @@
 
 <!DOCTYPE html>
 
-{% block titulo%}Gestionar País{% endblock titulo%}
+{% block titulo%}Gestionar Países{% endblock titulo%}
 
-{% block section %}Crear País{% endblock section %}
+{% block section %}Editar País{% endblock section %}
 
 {% block content%}
 
@@ -17,7 +17,7 @@
 
       <hr>
       <button type="submit" class="btn btn-success" style="float: right; margin: 1%;">
-        <i class="fa fa-plus"></i> Crear
+        <i class="fa fa-check"></i> Editar
       </button>
 
       <button type="button" class="btn btn-secondary" onclick="window.history.back()" style="float: right;margin: 1%;">
@@ -50,7 +50,7 @@
                   <tr>
                     <td style="text-align: left;">{{pais.pk}}</td>
                     <td style="text-align: left;">{{pais.nombre}}</td>
-                    <td width="10%" align="center">
+                    <td>
                           <div class="table-data-feature">
                             <button type="button" class="btn btn-warning btn-sm" onclick="location.href='{% url 'configuracion:editar_pais' pais.pk %}'">
                               <i class="fas fa-paint-brush"></i>

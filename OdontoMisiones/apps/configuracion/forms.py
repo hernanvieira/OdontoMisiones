@@ -1,27 +1,30 @@
 from django import forms
 from .models import *
 
-class Tipo_urgenciaForm(forms.ModelForm)
+class Tipo_urgenciaForm(forms.ModelForm):
     class Meta:
         model = Tipo_urgencia
-        field = ['nombre']
+        fields = ['nombre']
 
-class Tipo_estado_eq_repForm(forms.ModelForm)
+class Tipo_estado_eq_repForm(forms.ModelForm):
     class Meta:
         model = Tipo_estado_eq_rep
-        field = ['nombre_estado']
+        fields = ['nombre_estado']
 
-class PaisForm(forms.ModelForm)
+class PaisForm(forms.ModelForm):
     class Meta:
-        model = Tipo_urgencia
-        field = ['nombre']
+        model = Pais
+        fields = ['nombre']
+        widgets = {
+        'nombre' : forms.TextInput(attrs={'type' : 'text', 'class' : 'form-control form-control-user col-6', 'placeholder' : 'Nombre'})
+        }
 
-class ProvinciaForm(forms.ModelForm)
+class ProvinciaForm(forms.ModelForm):
     class Meta:
-        model = Tipo_urgencia
-        field = ['nombre','pais']
+        model = Provincia
+        fields = ['nombre','pais']
 
-class CiudadForm(forms.ModelForm)
+class CiudadForm(forms.ModelForm):
     class Meta:
-        model = Tipo_urgencia
-        field = ['nombre','provincia']
+        model = Ciudad
+        fields = ['nombre','provincia']
