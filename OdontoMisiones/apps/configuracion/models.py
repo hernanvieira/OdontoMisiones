@@ -18,7 +18,7 @@ class Tipo_estado_eq_rep(models.Model):
 
 class Pais(models.Model):
     id_pais = models.AutoField(primary_key=True)
-    nombre = models.CharField('nombre',max_length=100, blank=True, null=True)
+    nombre = models.CharField('nombre',max_length=100, blank=False, null=False)
 
     def __str__(self):
         return str(self.nombre)
