@@ -58,10 +58,31 @@
                               <i class="fas fa-paint-brush"></i>
                             </button>
                             <!-- Modal Eliminar -->
-                            <button type="button" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash"></i>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg2{{pais.pk}}">
+                              <i class="fas fa-trash"></i>
                             </button>
-
+                            <div class="modal fade bs-example-modal-lg2{{pais.pk}}" id="myModal2{{pais.pk}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel{{pais.pk}}">Confirmar Eliminacion</h4>
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <a>¿Está seguro de <strong>eliminar</strong> el país?</a>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <div class="alineado-derecha">
+                                            <a href="{% url 'configuracion:eliminar_pais' pais.pk %}">
+                                              <button type="button" class="btn btn-danger" >Eliminar</button>
+                                            </a>
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Modal -->
                           </div>
                       </td>
                   </tr>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import *
 
 from django.contrib import messages
@@ -42,10 +42,12 @@ def editar_pais(request,id_pais):
 #Eliminar un pais
 def eliminar_pais (request,id_pais):
     paises = Pais.objects.all()
+    pais_form=None
     try:
         pais = get_object_or_404(Pais,id_pais=id_pais)
         pais.delete()
         messages.warning(request, 'Se eliminó el país')
+        return redirect('/configuracion/crear_pais',{'pais_form' : pais_form, 'paises':paises})
     except Exception as e:
         messages.error(request, 'Ocurrió un error al tratar de eliminar el país')
     return render(request, 'configuracion/crear_pais.html',{'pais_form' : pais_form, 'paises':paises})
