@@ -23,6 +23,7 @@ urlpatterns = [
     path('',Home, name = 'index'),
 
     path('configuracion/', include(('apps.configuracion.urls','configuracion'))),
+    path('repuesto/', include(('apps.repuesto.urls','repuesto'))),
 
 
 ]
